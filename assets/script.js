@@ -17,28 +17,17 @@ var questions = [
   }
 ]
 console.log(questions)
-///timer
-var secondsLeft= 60;
+
+/// Create a timer
 
 
-timer.addEventListener("click", startTimer(){
-  var timer = setInterval(function() {
-    console.log(count);
-    count--;
-    if(count === 0) {
-      stopInterval()
-    }
-  }, 1000);
-  
-  var stopInterval = function() {
-    console.log('time is up!');
-    clearInterval(timer);
-  }
-
-//Create a function to pull in the next question
-//Create a score
+///Trigger the timer to start on start button
 
 
-//let timerInterval = null;
+//Show the question on the page after the start button is hit and timer starts
+
+//Once question is answered show the next question
+
+//Game is complete show score and store score with local storage
 
 
