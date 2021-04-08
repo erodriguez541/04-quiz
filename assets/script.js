@@ -1,4 +1,5 @@
 var countdown = document.querySelector("countdown");
+var countdown = setInterval(60)
 
 //make a question array
 var questions = [
@@ -10,9 +11,10 @@ var questions = [
     correctanswer: "Document Object Model"
   }
 ]
+console.log(questions)
 ///timer
-document.getElementById(countdown).addEventListener("click", countdown)
-countdown();{
+var timer = setInterval(0)
+document.getElementsByClassName(countdown).addEventListener("click", countdown);{
   //  setup a timer
   const intervalId = setInterval(() => {
       // update the timer  

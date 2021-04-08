@@ -1,9 +1,9 @@
+
 #button{
-    align-content: center;
+  align-items: flex-end;
 }
 
 h1{
     text-decoration:underline;
     text-align: center;
-    display: flex;
 }
