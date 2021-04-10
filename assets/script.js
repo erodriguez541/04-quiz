@@ -1,8 +1,12 @@
-var questioncontainer = document.querySelector("#question-container");
+var questionContainer = document.querySelector("#question-container");
 var timerElement = document.querySelector(".timer-count");
 var answerbtn = document.querySelector("#answer-buttons")
-var startButton = document.querySelector(".start-button")
+var startButton = document.querySelector(".start-button");
 var isWin = false;
+var timerCount;
+var timer;
+
+
 
 //Start Button
 function startGame() {
@@ -11,6 +15,7 @@ function startGame() {
   startButton.disabled = true;
   //renderQuestions()
   startTimer()
+  //render()
 }
 
 //make a question array
@@ -28,6 +33,11 @@ var questions = [
 ]
 console.log(questions)
 
+function endGame(){
+  startButton.disabled = false;
+  setLosses()
+}
+
 /// Create a timer
 function startTimer() {
   // Sets timer
@@ -38,11 +48,12 @@ function startTimer() {
       // Tests if win condition is met
       if (isWin && timerCount > 0) {
         clearInterval(timer);
+        renderQuestions();
       }
     }
     if (timerCount === 0) {
-      // Clears interval
       clearInterval(timer);
+      endGame()
     }
   }, 1000);
 }
@@ -51,19 +62,13 @@ function startTimer() {
 ///Trigger the timer to start on start button
 startButton.addEventListener('click',startGame);
 
-//Show the question on the page after the start button is hit and timer starts
-
-//Once question is answered show the next question
-
-//Game is complete show score and store score with local storage
-
 
 
 //GOAL: CREATE A QUIZ
-//1. Click Start Button
+//1. Click Start Button **Done
 //2. Show First Question
 //3. Show Answers for First Question
-//4. Start timer
+//4. Start timer** Done
 //4a. if time runs out(if timer hits 0)...end the game
 //      a.  Show that the game is over.
 //      b.  Get user initials for high score screen
