@@ -1,9 +1,20 @@
 
-#button{
-  align-items: flex-end;
-}
 
 h1{
     text-decoration:underline;
     text-align: center;
+}
+
+body{
+  background-color: darkgrey;
+  font-family: sans-serif;
+}
+
+#question{
+  align-content: center;
+}
+
+.timer-count{
+display: flex;
+align-content: flex-end;
 }

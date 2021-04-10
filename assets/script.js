@@ -35,7 +35,7 @@ console.log(questions)
 
 function endGame(){
   startButton.disabled = false;
-  setLosses()
+ // setLosses()
 }
 
 /// Create a timer
@@ -48,16 +48,24 @@ function startTimer() {
       // Tests if win condition is met
       if (isWin && timerCount > 0) {
         clearInterval(timer);
-        renderQuestions();
+        nextQuestion();
       }
     }
     if (timerCount === 0) {
       clearInterval(timer);
-      endGame()
+      showQuestion();
+      endGame();
     }
   }, 1000);
 }
 
+function showQuestion(){
+  nextQuestion();
+}
+function nextQuestion(){
+  questionContainer.textContent = questions[questionIndex].question;
+
+}
 
 ///Trigger the timer to start on start button
 startButton.addEventListener('click',startGame);
